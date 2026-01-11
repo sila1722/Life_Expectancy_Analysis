@@ -7,16 +7,26 @@ Bu proje, ülkelerin sağlık, ekonomi ve demografik göstergelerini kullanarak 
 ## 📌 Projenin Amacı
 Bir ülkenin kalkınmışlık düzeyi, eğitim süresi ve sağlık harcamaları gibi değişkenlerin yaşam süresi üzerindeki etkisini analiz etmek ve bu değişkenler üzerinden bir regresyon modeli geliştirerek gelecek tahminlerinde bulunmaktır.
 
----
-
-## 🛠️ Veri Ön İşleme (Data Preprocessing)
-Veri setindeki eksik değerler, rastgele yöntemler yerine verinin doğasına uygun bir hibrit strateji ile temizlenmiştir:
+## 🧬 Veri Ön İşleme (Data Preprocessing)
+Veri setindeki eksik değerler, verinin doğasına uygun bir hibrit strateji ile temizlenmiştir:
 
 1. **Doğrusal İnterpolasyon (Linear Interpolation):** Sağlık ve ekonomi verileri zamansal bir süreç izlediği için, her ülkenin kendi içindeki eksik yılları kronolojik olarak doldurulmuştur.
-2. **Statü Bazlı Medyan (Status-based Median):** Belirli bir sütunda hiç verisi olmayan ülkeler için, ülkenin gelişmişlik durumu (`Developed` veya `Developing`) baz alınarak grup medyanları atanmıştır.
-3. **Sütun Temizliği:** Sütun isimlerindeki gereksiz boşluklar (`strip`) temizlenerek veri manipülasyonu standart hale getirilmiştir.
+2. **Statü Bazlı Medyan (Status-based Median):** Hiç verisi bulunmayan ülkeler için, ülkenin gelişmişlik durumu (`Developed` veya `Developing`) baz alınarak grup medyanları atanmıştır.
+3. **Sütun Temizliği:** Sütun isimlerindeki gereksiz boşluklar temizlenerek veri manipülasyonu standart hale getirilmiştir.
 
 ---
+
+## 📊 Görsel Veri Analizi (EDA)
+Veriden elde edilen temel içgörüler ve değişkenler arası ilişkiler aşağıda sunulmuştur:
+
+### 1. Korelasyon Isı Haritası
+Değişkenler arasındaki pozitif ve negatif ilişkileri gösterir. Okullaşma ve gelir düzeyi ile yaşam süresi arasındaki güçlü bağ burada netçe görülmektedir.
+
+### 2. Eğitim ve Yaşam Süresi İlişkisi
+Okullaşma süresi arttıkça yaşam beklentisinin nasıl yükseldiğini gösteren saçılım grafiği.
+
+### 3. Özellik Önem Sırası (Feature Importance)
+Random Forest modelimizin tahmin yaparken hangi değişkenlere (HIV/AIDS, Yetişkin Ölüm Oranı vb.) daha çok ağırlık verdiğini gösterir.
 
 ## 🧬 Model Seçimi: Random Forest Regressor
 Projede **Random Forest** algoritmasının tercih edilme nedenleri:

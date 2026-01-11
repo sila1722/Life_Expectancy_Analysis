@@ -61,6 +61,6 @@ Projenin yerel bilgisayarda çalıştırılması için:
 2. Gerekli kütüphaneleri yükleyin: `pip install pandas numpy seaborn matplotlib scikit-learn`
 3. Jupyter Notebook dosyasını (`.ipynb`) herhangi bir editörde (VS Code vb.) açıp tüm hücreleri çalıştırın.
 
----
-
 **Hazırlayan:** Sıla AKGÜN 23430070028
+
+
